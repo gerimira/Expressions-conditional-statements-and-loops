@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication table</title>
+</head>
+<body>
+
+</body>
+<script>
+    function multiplicationTable(n) {
+        let result=`<table border=\'1\'>\n`
+        console.log(result)
+        for (var i = 0; i <= n; i++) {
+            result+=`    <tr><th>${i}</th>`
+            if(i==0) {
+                result = '    <tr><th>x</th>'
+                for (var j = 1; j <= n; j++) {
+                    result += `<th>${(i+1) * j}</th>`
+                }
+                result += '</tr>\n'
+            }
+            else{
+                for (var j = 1; j <= n; j++) {
+
+                    result+=`<td>${i*j}</td>`
+
+
+
+                }
+                result+='</tr>\n'
+            }
+
+        }
+        result+='</table>'
+        return result
+        //console.log(result)
+    }
+
+    document.body.innerHTML=multiplicationTable(5)
+</script>
+</html>
